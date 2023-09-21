@@ -5,6 +5,8 @@ import "./style.css";
 export default function ToDo() {
     const [lista, setLista] = useState([]);
     const [autor, setAutor] = useState("");
+    const [livro, setLivro] = useState("");
+    const [genero, setGenero] = useState("");
   
     const salvar = (e) => {
       e.preventDefault();
@@ -12,6 +14,8 @@ export default function ToDo() {
         ...lista,
         {
           autor: autor,
+          genero: genero,
+          livro: livro,
         },
       ]);
       setId(id + 1);
@@ -32,16 +36,35 @@ export default function ToDo() {
       <Link to="/">home</Link>
       <h1>Lista de Autores</h1>
       <form onSubmit={salvar}>
-          <input type="text"
+
+         <h3>Digite seu autor a ser adicionado:</h3> <input type="text"
               value={autor}
               onChange={(e) => { setAutor(e.target.value) }} />
+
+       <h3> Digite seu livro a ser adicionado:</h3><input type="text"
+              value={livro}
+              onChange={(e) => { setLivro(e.target.value) }} />
+
+      <h3>Digite seu genero a ser adicionado:</h3><input type="text"
+              value={genero}
+              onChange={(e) => { setGenero(e.target.value) }} />
+
           <button>ADICIONAR</button>
       </form>
+
       {lista.map((ativ) =>
           <ul key={ativ.id}>
               <li>
-                  <p>{ativ.autor}</p>
+                  Autor:<p>{ativ.autor}</p>
                   <button onClick={() => remover(ativ.id)}>Remover</button>
+              </li>
+              <li>
+                  Livro:<p>{ativ.livro}</p>
+                  <button onClick={() => remover(ativ.id)}>Remover</button>
+              </li>
+              <li>
+                  Genero:<p>{ativ.genero}</p>
+                  <button onClick={() => remover(ativ.set)}>Remover</button>
               </li>
           </ul>
       )}
