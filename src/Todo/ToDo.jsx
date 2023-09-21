@@ -7,12 +7,14 @@ export default function ToDo() {
     const [autor, setAutor] = useState("");
     const [livro, setLivro] = useState("");
     const [genero, setGenero] = useState("");
+    const [id, setId] = useState(1);
   
     const salvar = (e) => {
       e.preventDefault();
       setLista([
         ...lista,
         {
+          id: id,
           autor: autor,
           genero: genero,
           livro: livro,
