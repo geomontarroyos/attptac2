@@ -16,8 +16,8 @@ export default function ToDo() {
         {
           id: id,
           autor: autor,
-          genero: genero,
           livro: livro,
+          genero: genero,
         },
       ]);
       setId(id + 1);
@@ -58,15 +58,13 @@ export default function ToDo() {
           <ul key={ativ.id}>
               <li>
                   Autor:<p>{ativ.autor}</p>
-                  <button onClick={() => remover(ativ.id)}>Remover</button>
               </li>
               <li>
                   Livro:<p>{ativ.livro}</p>
-                  <button onClick={() => remover(ativ.id)}>Remover</button>
               </li>
               <li>
                   Genero:<p>{ativ.genero}</p>
-                  <button onClick={() => remover(ativ.set)}>Remover</button>
+                  <button onClick={() => remover(ativ.id)}>Remover</button>
               </li>
           </ul>
       )}
