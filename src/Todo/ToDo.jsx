@@ -37,9 +37,7 @@ export default function ToDo() {
       ]);
       setId(id + 1);
     };
-    <link to={`/detalhe/${objeto.id}`}>
-      <p>{objeto.atividade}</p>
-    </link>
+   
     const remover = (id) => {
       /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
       const auxLista = [];
@@ -74,9 +72,11 @@ export default function ToDo() {
 
       {lista.map((ativ) =>
           <ul key={ativ.id}>
+            <Link to={`/detalhe/${ativ.id}`}>
               <li>
                   Autor:<p>{ativ.autor}</p>
               </li>
+              </Link>
               <li>
                   Livro:<p>{ativ.livro}</p>
               </li>
