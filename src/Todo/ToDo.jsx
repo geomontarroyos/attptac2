@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 export default function ToDo() {
-    const listaLocalStorage = localStorage.getItem("Lista");
+    const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+    const [id, setId] = useState(listaLocalStorage[listaLocalStorage.length - 1]?.id + 1 || 1);
     const [lista, setLista] = useState([]);
     const [autor, setAutor] = useState("");
     const [livro, setLivro] = useState("");
     const [genero, setGenero] = useState("");
-    const [id, setId] = useState(1);
+ 
 
    //useEffect(() => {localStorage.setItem("Lista", JSON.stringify(lista))}, [lista]);
    useEffect(() => {
@@ -36,6 +37,9 @@ export default function ToDo() {
       ]);
       setId(id + 1);
     };
+    <link to={`/detalhe/${objeto.id}`}>
+      <p>{objeto.atividade}</p>
+    </link>
     const remover = (id) => {
       /*setLista(lista.filter((ativ) => (ativ.id !== id ? lista : null)));*/
       const auxLista = [];
