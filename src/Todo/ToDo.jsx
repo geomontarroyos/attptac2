@@ -52,7 +52,7 @@ export default function ToDo() {
     return (
       <div class="container">
       <Link to="/">home</Link>
-      <h1>Lista de Autores</h1>
+      <h1>Lista Biblioteca</h1>
       <form onSubmit={salvar}>
 
          <h3>Digite seu autor a ser adicionado:</h3> <input type="text"
